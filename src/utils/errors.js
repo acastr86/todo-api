@@ -13,7 +13,7 @@ const errorHandler = (error, req, res, next) => {
     logger.log.error(new Error(error.message));
 
     res.status(statusCode);
-    rees.send({
+    res.send({
         message: error.message,
         stack: process.env.NODE_ENV === 'production' ? '💩' : error.stack,
     });
