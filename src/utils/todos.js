@@ -74,7 +74,7 @@ export const updateTodo = async (id, todo) => {
 
     if (todoError) {
         logger.log.error(new Error(`Validation error: ${todoError.message}`));
-        return {todoError};
+        return { error: todoError};
     };
     
     logger.log.info(`Validating id: ${id}`);
@@ -82,7 +82,7 @@ export const updateTodo = async (id, todo) => {
 
     if (idError) {
         logger.log.error(new Error(`Validation error: ${idError.message}`));
-        return {idError};
+        return { error: idError};
     }
 
     logger.log.success('Validated todo and ID ');
